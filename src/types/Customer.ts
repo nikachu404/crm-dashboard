@@ -4,5 +4,5 @@ export interface Customer {
   phone: string,
   email: string,
   country: string,
-  status: 'active' | 'inactive';
+  status: string;
 }
