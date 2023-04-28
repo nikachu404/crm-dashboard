@@ -1,11 +1,10 @@
 import React, { useState } from 'react';
 import cn from 'classnames';
 
-import search from '../../assets/search.svg';
+import customersData from '../../api/customers.json';
+import { ICONS_BASE_URL } from '../../constants';
 
 import './Customers.scss';
-
-import customersData from '../../api/customers.json';
 
 export const Customers: React.FC = () => {
   const [searchTerm, setSearchTerm] = useState('');
@@ -25,7 +24,7 @@ export const Customers: React.FC = () => {
         </div>
         <span className="customers__search">
           <span className="customers__search-icon">
-            <img src={search} alt="seacrh"></img>
+            <img src={ICONS_BASE_URL + 'search.svg'} alt="seacrh"></img>
           </span>
           <input
             type="text"
