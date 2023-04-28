@@ -1,0 +1,1 @@
+export const ICONS_BASE_URL = 'https://raw.githubusercontent.com/nikachu404/crm-dashboard/main/src/assets/';
