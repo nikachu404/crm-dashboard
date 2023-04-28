@@ -1,6 +1,5 @@
 import React from 'react';
-import { Sidebar } from './components/Sidebar/Sidebar';
-import { Customers } from './components/Customers/Customers';
+import { Sidebar, Customers } from './components';
 
 import './App.scss';
 
