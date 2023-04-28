@@ -1,0 +1,38 @@
+body {
+  margin: 0;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 21px;
+
+  letter-spacing: -0.01em;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.App {
+  height: 100vh;
+  background-color: #FAFBFF;
+  font-family: 'Poppins', sans-serif;
+
+  &__main {
+    height: 100%;
+    margin-left: 306px;
+    padding: 41px 71px 288px;
+
+    overflow: auto;
+
+    @media (max-width: 1000px) {
+      margin-left: 0;
+      padding: 80px 20px 50px;
+    }
+  }
+
+  &__greeting {
+    margin-bottom: 51px;
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 36px;
+  }
+}
