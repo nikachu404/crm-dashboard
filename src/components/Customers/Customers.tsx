@@ -7,8 +7,13 @@ import customersData from '../../data/customers.json';
 
 import './Customers.scss';
 
-export const Customers: React.FC = () => {
+type Props = {
+  selectCustomer: (customer: Customer) => void;
+}
+
+export const Customers: React.FC<Props> = ({ selectCustomer }) => {
   const [searchTerm, setSearchTerm] = useState('');
+  const [selectedPage, setSelectedPage] = useState(1);
 
   const filteredCustomers = customersData.filter((customer) => {
     return Object.values(customer).some((value) => {
@@ -19,30 +24,46 @@ export const Customers: React.FC = () => {
   const renderCustomer = (customer: Customer) => {
     return (
       <tr key={customer.email}>
-        <td className="customers__td">{customer.name}</td>
-        <td className="customers__td">{customer.phone}</td>
-        <td className="customers__td">{customer.email}</td>
-        <td className="customers__td">{customer.country}</td>
+        <td className="customers__td customers__td--name">{customer.name}</td>
+        <td className="customers__td customers__td--phone">{customer.phone}</td>
+        <td className="customers__td customers__td--email">{customer.email}</td>
+        <td className="customers__td customers__td--country">{customer.country}</td>
         <td className="customers__td">
           <div
-            className={cn('customers__status', {
+            className={cn('customers__status customers__td--status', {
               'customers__status--active': customer.status === 'active',
             })}
           >
             {customer.status.charAt(0).toUpperCase() + customer.status.slice(1)}
           </div>
         </td>
+        <td className="customers__td customers__td--watch">
+          <img src={ICONS_BASE_URL + 'eye.svg'} alt="watch" onClick={() => selectCustomer(customer)} />
+        </td>
       </tr>
     );
   };
 
   const renderPagination = () => {
-    const pages = [1, 2, 3, 4, '...', 40];
-    const selectedPage = 1;
+    const pages = [1, 2, 3, 4];
+
+    const handlePageChange = (newPage: number) => {
+      if (newPage < 1 || newPage > pages.length) {
+        return;
+      }
+
+      setSelectedPage(newPage);
+    };
 
     return (
       <ul className="customers__pag-list">
-        <li className="customers__pag-item">&lt;</li>
+        <li
+          className="customers__pag-item"
+          onClick={() => handlePageChange(selectedPage - 1)}
+        >
+          &lt;
+        </li>
+
         {pages.map((page, index) => {
           return (
             <li
@@ -50,12 +71,19 @@ export const Customers: React.FC = () => {
               className={cn('customers__pag-item', {
                 'customers__pag-item--active': page === selectedPage,
               })}
+              onClick={() => handlePageChange(page)}
             >
               {page}
             </li>
           );
         })}
-        <li className="customers__pag-item">&gt;</li>
+
+        <li
+          className="customers__pag-item"
+          onClick={() => handlePageChange(selectedPage + 1)}
+        >
+          &gt;
+        </li>
       </ul>
     );
   };
@@ -84,11 +112,11 @@ export const Customers: React.FC = () => {
       <table className="customers__table">
         <thead>
           <tr>
-            <th className="customers__th customers__underline-start">Customer Name</th>
-            <th className="customers__th">Phone Number</th>
-            <th className="customers__th">Email</th>
-            <th className="customers__th">Country</th>
-            <th className="customers__th customers__underline-end">Status</th>
+            <th className="customers__th customers__th--name customers__underline-start">Customer Name</th>
+            <th className="customers__th customers__th--phone">Phone Number</th>
+            <th className="customers__th customers__th--email customers__email">Email</th>
+            <th className="customers__th customers__th--country">Country</th>
+            <th className="customers__th customers__th--status customers__underline-end">Status</th>
           </tr>
         </thead>
         <tbody>

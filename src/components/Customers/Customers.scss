@@ -5,13 +5,17 @@
   background-color: white;
   box-shadow: 0px 10px 60px rgba(226, 236, 249, 0.5);
 
-  overflow-x: auto;
-
   &__header {
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
+
+    @media (max-width: 1000px) {
+      flex-direction: column;
+      gap: 10px;
+      margin-bottom: 10px;
+    }
   }
 
   &__title {
@@ -31,11 +35,14 @@
 
     width: 216px;
     height: 38px;
-    margin-left: 120px;
 
     background: #F9FBFF;
     border: none;
     border-radius: 10px;
+
+    @media (max-width: 1000px) {
+      width: 100%;
+    }
   }
 
   &__search-input {
@@ -60,31 +67,6 @@
   &__table {
     width: 100%;
     table-layout: auto;
-  }
-
-  &__th {
-    font-weight: 500;
-    color: #B5B7C0;
-
-    padding-bottom: 14px;
-    border-bottom: 1px solid #EEEEEE;
-
-    &::before {
-      position: absolute;
-
-      content: "";
-      height: 1px;
-      background-color: #EEEEEE;
-      bottom: 0;
-    }
-  }
-
-  &__td {
-    padding: 24px 0;
-    border-bottom: 1px solid rgb(238, 238, 238);
-    font-weight: 500;
-
-    color: #292D32;
   }
 
   &__td,
@@ -124,6 +106,10 @@
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
+
+    @media (max-width: 1000px) {
+      justify-content: center;
+    }
   }
 
   &__pag-list {
@@ -131,9 +117,13 @@
     flex-direction: row;
     gap: 12px;
 
-    margin-left: 90px;
+    padding: 0;
 
     list-style: none;
+
+    @media (max-width: 400px) {
+      gap: 5px;
+    }
   }
 
   &__pag-item {
@@ -153,7 +143,7 @@
 
     color: #404B52;
 
-    cursor: not-allowed;
+    cursor: pointer;
 
     &--active {
       background: #5932EA;
@@ -164,6 +154,10 @@
   &__pag-info {
     font-weight: 500;
     color: #B5B7C0;
+
+    @media (max-width: 1000px) {
+      display: none;
+    }
   }
 
   &__underline-start {
@@ -188,14 +182,69 @@
 
     &::after {
       content: "";
-      
+
       position: absolute;
       right: -38px;
       bottom: -1px;
-      
+
       height: 1px;
       width: 38px;
       background-color: #EEEEEE;
+    }
+  }
+
+  &__td {
+    padding: 24px 0;
+    border-bottom: 1px solid rgb(238, 238, 238);
+    font-weight: 500;
+
+    color: #292D32;
+
+    &--watch {
+      display: none;
+    }
+
+    @media (max-width: 1000px) {
+
+      &--phone,
+      &--email,
+      &--country,
+      &--status {
+        display: none;
+      }
+
+      &--watch {
+        display: table-cell;
+        height: 30px;
+        width: 30px;
+      }
+    }
+  }
+
+  &__th {
+    font-weight: 500;
+    color: #B5B7C0;
+
+    padding-bottom: 14px;
+    border-bottom: 1px solid #EEEEEE;
+
+    &::before {
+      position: absolute;
+
+      content: "";
+      height: 1px;
+      background-color: #EEEEEE;
+      bottom: 0;
+    }
+
+    @media (max-width: 1000px) {
+
+      &--phone,
+      &--email,
+      &--country,
+      &--status {
+        display: none;
+      }
     }
   }
 }

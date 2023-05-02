@@ -24,46 +24,52 @@ interface SidebarItem {
   item: navigationItem;
 }
 
-const SidebarItem = ({ item }: SidebarItem) => (
-  <li
-    className={cn(
-      'sidebar__nav-item',
-      { 'sidebar__nav-item--selected': item.selected }
-    )}
-    key={item.title}
-  >
-    <div className="sidebar__nav-item--title">
-      <img
-        src={ICONS_BASE_URL + item.icon + '.svg'}
-        alt={`${item.title} icon`}
-        className="sidebar__icon"
-      />
-      {item.title}
-    </div>
-    <img
-      src={
-        item.selected
-          ? ICONS_BASE_URL + 'right-arrow-white.svg'
-          : ICONS_BASE_URL + 'right-arrow.svg'
-      }
-      alt="right arrow"
-    />
-  </li>
-);
-
 export const Sidebar: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [selectedItem, setSelectedItem] = useState(navigationItems[2]);
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
   };
+
+  const SidebarItem = ({ item }: SidebarItem) => (
+    <li
+      className={cn(
+        'sidebar__nav-item',
+        { 'sidebar__nav-item--selected': item.title === selectedItem.title }
+      )}
+      key={item.title}
+      onClick={() => setSelectedItem(item)}
+    >
+      <div className="sidebar__nav-item--title">
+        <img
+          src={ICONS_BASE_URL + item.icon + '.svg'}
+          alt={`${item.title} icon`}
+          className="sidebar__icon"
+        />
+        {item.title}
+      </div>
+      <img
+        src={
+          item.title === selectedItem.title
+            ? ICONS_BASE_URL + 'right-arrow-white.svg'
+            : ICONS_BASE_URL + 'right-arrow.svg'
+        }
+        alt="right arrow"
+      />
+    </li>
+  );
 
   return (
     <div className="sidebar">
       <div className="sidebar__content">
         <div className="sidebar__burger-menu" onClick={toggleMenu}>
           <img
-            src={ICONS_BASE_URL + 'burger.svg'}
+            src={
+              isMenuOpen
+                ? ICONS_BASE_URL + 'burger-open.svg'
+                : ICONS_BASE_URL + 'burger.svg'
+            }
             alt="burger menu"
             className="sidebar__burger-icon"
           />
@@ -96,7 +102,7 @@ export const Sidebar: React.FC = () => {
         </div>
 
         <div className="sidebar__user">
-          <img src={ICONS_BASE_URL + 'user.svg'} alt="user image" />
+          <img src={ICONS_BASE_URL + 'user.svg'} alt="user image" className="sidebar__user--icon"/>
           <div className="sidebar__user-info">
             <p className="sidebar__user-name">Evano</p>
             <p className="sidebar__user-position">Project Manager</p>
