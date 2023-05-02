@@ -129,10 +129,14 @@
     display: block;
   }
 
-  &__user {
+  .sidebar__user {
     display: flex;
     flex-direction: row;
     gap: 12px;
+
+    &--icon {
+      cursor: pointer;
+    }
   }
 
   &__user-info {
