@@ -5,17 +5,17 @@
 
 <h2>Technologies used</h2>
 
- - <img width="40px" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" />React
-  - <img width="40px" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg" />TypeScript
- - <img width="40px" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" />JavaScript
- - <img width="40px" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" />HTML
- - <img width="40px" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-plain.svg" />CSS
- - <img width="40px" src="https://github.com/devicons/devicon/blob/master/icons/sass/sass-original.svg" />SCSS
- - <img width="40px" src="https://github.com/devicons/devicon/blob/master/icons/eslint/eslint-original.svg" />Eslint
+ - ![React](https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB)
+ - ![TypeScript](https://img.shields.io/badge/typescript-%23007ACC.svg?style=for-the-badge&logo=typescript&logoColor=white)
+ - ![JavaScript](https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E)
+ - ![HTML5](https://img.shields.io/badge/html5-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white)
+ - ![CSS3](https://img.shields.io/badge/css3-%231572B6.svg?style=for-the-badge&logo=css3&logoColor=white)
+ - ![SASS](https://img.shields.io/badge/SASS-hotpink.svg?style=for-the-badge&logo=SASS&logoColor=white)
+ - ![ESLint](https://img.shields.io/badge/ESLint-4B3263?style=for-the-badge&logo=eslint&logoColor=white)
 
 <h2>Responsiveness</h2>
 
- ![](https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExMjI2MTdkZjFkNjM2ZmYzZjZmYTc1OTZkM2I4ZjhjMGZmMTUwMzViOCZlcD12MV9pbnRlcm5hbF9naWZzX2dpZklkJmN0PWc/j0MuYdNL7XzNfG6mbE/giphy.gif)
+ ![](https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExNTQ4NTRjYWJiNTJkZDdiZDc4MjA5Yzk5MjFkOTNkMTBiM2ZhYmEyYyZlcD12MV9pbnRlcm5hbF9naWZzX2dpZklkJmN0PWc/GaCKI8eO1rAQID5hfe/giphy.gif)
  
 <h2>Instructions how to run application locally</h2>
 
